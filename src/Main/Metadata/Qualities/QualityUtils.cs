@@ -1,6 +1,7 @@
 using System;
-using System.Data;
+
 using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
+using System.Data;
 
 namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
 {
