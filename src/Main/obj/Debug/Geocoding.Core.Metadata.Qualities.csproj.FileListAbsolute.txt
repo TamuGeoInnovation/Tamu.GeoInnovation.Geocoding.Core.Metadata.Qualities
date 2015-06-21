@@ -1,5 +1,0 @@
-C:\DevBuild\Tamu\GeoInnovation\Geocoding\Core.Metadata.Qualities\build\1.0.0\release\Tamu.GeoInnovation.Geocoding.Core.Metadata.Qualities.dll
-C:\DevBuild\Tamu\GeoInnovation\Geocoding\Core.Metadata.Qualities\build\1.0.0\release\Tamu.GeoInnovation.Geocoding.Core.Metadata.Qualities.pdb
-C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Metadata.Qualities\src\Main\obj\Debug\Geocoding.Core.Metadata.Qualities.csprojResolveAssemblyReference.cache
-C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Metadata.Qualities\src\Main\obj\Debug\Tamu.GeoInnovation.Geocoding.Core.Metadata.Qualities.dll
-C:\DevSource\Tamu\GeoInnovation\Geocoding\Core.Metadata.Qualities\src\Main\obj\Debug\Tamu.GeoInnovation.Geocoding.Core.Metadata.Qualities.pdb
