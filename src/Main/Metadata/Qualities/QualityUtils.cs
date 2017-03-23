@@ -31,9 +31,14 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
         //public const int QUALITY_UNMATCHABLE = 99;
         //public const int QUALITY_UNKNOWN = -1;
 
-		public const string QUALITY_NAME_GPS = "QUALITY_GPS";
-		public const string QUALITY_NAME_EXACT_PARCEL_CENTROID = "QUALITY_EXACT_PARCEL_CENTROID";
-		public const string QUALITY_NAME_NEAREST_PARCEL_CENTROID = "QUALITY_NEAREST_PARCEL_CENTROID";
+		public const string QUALITY_NAME_ADDRESS_POINT = "QUALITY_ADDRESS_POINT";
+        public const string QUALITY_NAME_GPS = "QUALITY_GPS";
+        public const string QUALITY_NAME_ROOFTOP = "QUALITY_EXACT_ROOFTOP";
+        public const string QUALITY_NAME_PRIMARY_ENTRANCE = "QUALITY_PRIMARY_STRUCTURE_ENTRANCE";
+        public const string QUALITY_NAME_DRIVEWAY_ENTRANCE = "QUALITY_DRIVEWAY_ENTRANCE";         
+        public const string QUALITY_NAME_EXACT_PARCEL_CENTROID = "QUALITY_EXACT_PARCEL_CENTROID";
+        public const string QUALITY_NAME_PARCEL_CENTROID = "QUALITY_PARCEL_CENTROID";
+        public const string QUALITY_NAME_NEAREST_PARCEL_CENTROID = "QUALITY_NEAREST_PARCEL_CENTROID";
 		public const string QUALITY_NAME_ACTUAL_LOT_INTERPOLATION = "QUALITY_ACTUAL_LOT_INTERPOLATION";
 		public const string QUALITY_NAME_UNIFORM_LOT_INTERPOLATION = "QUALITY_UNIFORM_LOT_INTERPOLATION";
 		public const string QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION = "QUALITY_ADDRESS_RANGE_INTERPOLATION";
@@ -71,6 +76,10 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
 		public const string QUALITY_NAME_UNKNOWN = "QUALITY_UNKNOWN";
 
         public const string QUALITY_SHORT_NAME_GPS = "gps";
+        public const string QUALITY_SHORT_NAME_PRIMARY_STRUCTURE_ENTRANCE = "primary entrance";
+        public const string QUALITY_SHORT_NAME_ROOFTOP = "rooftop";
+        public const string QUALITY_SHORT_NAME_DRIVEWAY_ENTRANCE = "driveway entrance";
+        public const string QUALITY_SHORT_NAME_ADDRESS_POINT = "address point";
         public const string QUALITY_SHORT_NAME_EXACT_PARCEL_CENTROID = "exact parcel";
         public const string QUALITY_SHORT_NAME_NEAREST_PARCEL_CENTROID = "nearest parcel";
         public const string QUALITY_SHORT_NAME_ACTUAL_LOT_INTERPOLATION = "actual lot";
@@ -109,7 +118,11 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
         public const string QUALITY_SHORT_NAME_UNKNOWN = "unknown";
 
 		public const string QUALITY_DESCRIPTION_GPS = "GPS";
-		public const string QUALITY_DESCRIPTION_EXACT_PARCEL_CENTROID = "Exact parcel centroid";
+        public const string QUALITY_DESCRIPTION_PRIMARY_STRUCTURE_ENTRANCE = "Primary structure entrance";
+        public const string QUALITY_DESCRIPTION_ROOFTOP = "Roof Top";
+        public const string QUALITY_DESCRIPTION_DRIVEWAY_ENTRANCE = "Quality driveway entrance";
+        public const string QUALITY_DESCRIPTION_ADDRESS_POINT = "Exact address point";
+        public const string QUALITY_DESCRIPTION_EXACT_PARCEL_CENTROID = "Exact parcel centroid";
 		public const string QUALITY_DESCRIPTION_NEAREST_PARCEL_CENTROID = "Nearest parcel centroid";
 		public const string QUALITY_DESCRIPTION_ACTUAL_LOT_INTERPOLATION = "Actual lot linear interpolation";
 		public const string QUALITY_DESCRIPTION_UNIFORM_LOT_INTERPOLATION = "Uniform lot linear interpolation";
@@ -365,6 +378,26 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
             {
                 ret = GeocodeQualityType.ActualLotInterpolation;
             }
+            else if (String.Compare(quality, QUALITY_NAME_ADDRESS_POINT, true) == 0)
+            {
+                ret = GeocodeQualityType.AddressPoint;
+            }
+            else if (String.Compare(quality, QUALITY_NAME_ROOFTOP, true) == 0)
+            {
+                ret = GeocodeQualityType.RoofTop;
+            }
+            else if (String.Compare(quality, QUALITY_NAME_PARCEL_CENTROID, true) == 0)
+            {
+                ret = GeocodeQualityType.ParcelCentroid;
+            }
+            else if (String.Compare(quality, QUALITY_NAME_PRIMARY_ENTRANCE, true) == 0)
+            {
+                ret = GeocodeQualityType.PrimaryStructureEntrance;
+            }
+            else if (String.Compare(quality, QUALITY_NAME_DRIVEWAY_ENTRANCE, true) == 0)
+            {
+                ret = GeocodeQualityType.DrivewayEntrance;
+            }           
             else if (String.Compare(quality, QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION, true) == 0)
             {
                 ret = GeocodeQualityType.AddressRangeInterpolation;
@@ -512,11 +545,27 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.ActualLotInterpolation:
                     ret = QUALITY_NAME_ACTUAL_LOT_INTERPOLATION;
                     break;
+                case GeocodeQualityType.AddressPoint:
+                    ret = QUALITY_NAME_ADDRESS_POINT;
+                    break;
+                case GeocodeQualityType.RoofTop:
+                    ret = QUALITY_NAME_ROOFTOP;
+                    break;
+                case GeocodeQualityType.PrimaryStructureEntrance:
+                    ret = QUALITY_NAME_PRIMARY_ENTRANCE;
+                    break;
+                case GeocodeQualityType.DrivewayEntrance:
+                    ret = QUALITY_NAME_DRIVEWAY_ENTRANCE;
+                    break;
                 case GeocodeQualityType.AddressRangeInterpolation:
                     ret = QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION;
                     break;
                 case GeocodeQualityType.BuildingCentroid:
                     ret = QUALITY_NAME_BUILDING_CENTROID;
+                    break;
+                case GeocodeQualityType.ParcelCentroid:
+                case GeocodeQualityType.CountyParcel:
+                    ret = QUALITY_NAME_PARCEL_CENTROID;
                     break;
                 case GeocodeQualityType.BuildingFrontDoor:
                     ret = QUALITY_NAME_BUILDING_FRONT_DOOR;
@@ -626,6 +675,9 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
             string ret = "";
             switch (t)
             {
+                case GeocodeQualityType.AddressPoint:
+                    ret = QUALITY_SHORT_NAME_ADDRESS_POINT;
+                    break;
                 case GeocodeQualityType.ActualLotInterpolation:
                     ret = QUALITY_SHORT_NAME_ACTUAL_LOT_INTERPOLATION;
                     break;
@@ -653,10 +705,15 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.CountySubdivisionCentroid:
                     ret = QUALITY_SHORT_NAME_COUNTY_SUBDIVISION_CENTROID;
                     break;
+                case GeocodeQualityType.DrivewayEntrance:
+                    ret = QUALITY_SHORT_NAME_DRIVEWAY_ENTRANCE;
+                    break;
                 case GeocodeQualityType.DynamicFeatureCompositionCentroid:
                     ret = QUALITY_SHORT_NAME_DYNAMIC_FEATURE_COMPOSITION_CENTROID;
                     break;
                 case GeocodeQualityType.ExactParcelCentroid:
+                case GeocodeQualityType.ParcelCentroid:
+                case GeocodeQualityType.CountyParcel:
                 case GeocodeQualityType.ExactParcelCentroidPoint:
                     ret = QUALITY_SHORT_NAME_EXACT_PARCEL_CENTROID;
                     break;
@@ -666,6 +723,12 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.NearestParcelCentroid:
                 case GeocodeQualityType.NearestParcelCentroidPoint:
                     ret = QUALITY_SHORT_NAME_NEAREST_PARCEL_CENTROID;
+                    break;
+                case GeocodeQualityType.PrimaryStructureEntrance:
+                    ret = QUALITY_SHORT_NAME_PRIMARY_STRUCTURE_ENTRANCE;
+                    break;
+                case GeocodeQualityType.RoofTop:
+                    ret = QUALITY_SHORT_NAME_ROOFTOP;
                     break;
                 case GeocodeQualityType.StateCentroid:
                     ret = QUALITY_SHORT_NAME_STATE_CENTROID;
@@ -744,6 +807,9 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.ActualLotInterpolation:
                     ret = QUALITY_DESCRIPTION_ACTUAL_LOT_INTERPOLATION;
                     break;
+                case GeocodeQualityType.AddressPoint:
+                    ret = QUALITY_DESCRIPTION_ADDRESS_POINT;
+                    break;
                 case GeocodeQualityType.AddressRangeInterpolation:
                     ret = QUALITY_DESCRIPTION_ADDRESS_RANGE_INTERPOLATION;
                     break;
@@ -768,10 +834,15 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.CountySubdivisionCentroid:
                     ret = QUALITY_DESCRIPTION_COUNTY_SUBDIVISION_CENTROID;
                     break;
+                case GeocodeQualityType.DrivewayEntrance:
+                    ret = QUALITY_DESCRIPTION_DRIVEWAY_ENTRANCE;
+                    break;
                 case GeocodeQualityType.DynamicFeatureCompositionCentroid:
                     ret = QUALITY_DESCRIPTION_DYNAMIC_FEATURE_COMPOSITION_CENTROID;
                     break;
                 case GeocodeQualityType.ExactParcelCentroid:
+                case GeocodeQualityType.ParcelCentroid:
+                case GeocodeQualityType.CountyParcel:
                 case GeocodeQualityType.ExactParcelCentroidPoint:
                     ret = QUALITY_DESCRIPTION_EXACT_PARCEL_CENTROID;
                     break;
@@ -781,6 +852,12 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                 case GeocodeQualityType.NearestParcelCentroid:
                 case GeocodeQualityType.NearestParcelCentroidPoint:
                     ret = QUALITY_DESCRIPTION_NEAREST_PARCEL_CENTROID;
+                    break;
+                case GeocodeQualityType.PrimaryStructureEntrance:
+                    ret = QUALITY_DESCRIPTION_PRIMARY_STRUCTURE_ENTRANCE;
+                    break;
+                case GeocodeQualityType.RoofTop:
+                    ret = QUALITY_DESCRIPTION_ROOFTOP;
                     break;
                 case GeocodeQualityType.StateCentroid:
                     ret = QUALITY_DESCRIPTION_STATE_CENTROID;
