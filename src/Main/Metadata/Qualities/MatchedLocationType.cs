@@ -15,7 +15,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Metadata.Qualities
 
         public MatchedLocationType()
         {
-            Type  = MatchedLocationTypes.Unknown;
+            Type = MatchedLocationTypes.Unknown;
         }
 
         public MatchedLocationType(string name, string code, MatchedLocationTypes type)

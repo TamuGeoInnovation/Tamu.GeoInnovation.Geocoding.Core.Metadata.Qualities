@@ -1,15 +1,14 @@
 using System;
-
-using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 using System.Data;
+using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 
 namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
 {
-	/// <summary>
-	/// Summary description for QualityUtils.
-	/// </summary>
-	public class QualityUtils
-	{
+    /// <summary>
+    /// Summary description for QualityUtils.
+    /// </summary>
+    public class QualityUtils
+    {
 
         //public const int QUALITY_GPS = 0;
         //public const int QUALITY_EXACT_PARCEL_CENTROID = 1;
@@ -31,21 +30,21 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
         //public const int QUALITY_UNMATCHABLE = 99;
         //public const int QUALITY_UNKNOWN = -1;
 
-		public const string QUALITY_NAME_ADDRESS_POINT = "QUALITY_ADDRESS_POINT";
+        public const string QUALITY_NAME_ADDRESS_POINT = "QUALITY_ADDRESS_POINT";
         public const string QUALITY_NAME_GPS = "QUALITY_GPS";
         public const string QUALITY_NAME_ROOFTOP = "QUALITY_EXACT_ROOFTOP";
         public const string QUALITY_NAME_PRIMARY_ENTRANCE = "QUALITY_PRIMARY_STRUCTURE_ENTRANCE";
-        public const string QUALITY_NAME_DRIVEWAY_ENTRANCE = "QUALITY_DRIVEWAY_ENTRANCE";         
+        public const string QUALITY_NAME_DRIVEWAY_ENTRANCE = "QUALITY_DRIVEWAY_ENTRANCE";
         public const string QUALITY_NAME_EXACT_PARCEL_CENTROID = "QUALITY_EXACT_PARCEL_CENTROID";
         public const string QUALITY_NAME_PARCEL_CENTROID = "QUALITY_PARCEL_CENTROID";
         public const string QUALITY_NAME_NEAREST_PARCEL_CENTROID = "QUALITY_NEAREST_PARCEL_CENTROID";
-		public const string QUALITY_NAME_ACTUAL_LOT_INTERPOLATION = "QUALITY_ACTUAL_LOT_INTERPOLATION";
-		public const string QUALITY_NAME_UNIFORM_LOT_INTERPOLATION = "QUALITY_UNIFORM_LOT_INTERPOLATION";
-		public const string QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION = "QUALITY_ADDRESS_RANGE_INTERPOLATION";
+        public const string QUALITY_NAME_ACTUAL_LOT_INTERPOLATION = "QUALITY_ACTUAL_LOT_INTERPOLATION";
+        public const string QUALITY_NAME_UNIFORM_LOT_INTERPOLATION = "QUALITY_UNIFORM_LOT_INTERPOLATION";
+        public const string QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION = "QUALITY_ADDRESS_RANGE_INTERPOLATION";
         public const string QUALITY_NAME_BUILDING_CENTROID = "QUALITY_BUILDING_CENTROID";
         public const string QUALITY_NAME_BUILDING_FRONT_DOOR = "QUALITY_BUILDING_FRONT_DOOR";
-		public const string QUALITY_NAME_STREET_INTERSECTION = "QUALITY_STREET_INTERSECTION";
-		public const string QUALITY_NAME_STREET_CENTROID = "QUALITY_STREET_CENTROID";
+        public const string QUALITY_NAME_STREET_INTERSECTION = "QUALITY_STREET_INTERSECTION";
+        public const string QUALITY_NAME_STREET_CENTROID = "QUALITY_STREET_CENTROID";
         public const string QUALITY_NAME_DYNAMIC_FEATURE_COMPOSITION_CENTROID = "QUALITY_DYNAMIC_FEATURE_COMPOSITION_CENTROID";
 
 
@@ -68,12 +67,12 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
 
         public const string QUALITY_NAME_CITY_CENTROID = "QUALITY_CITY_CENTROID";
         public const string QUALITY_NAME_CONSOLIDATED_CITY_CENTROID = "QUALITY_CONSOLIDATED_CITY_CENTROID";
-		public const string QUALITY_NAME_COUNTY_SUBDIVISION_CENTROID = "QUALITY_COUNTY_SUBDIVISION_CENTROID";
-		public const string QUALITY_NAME_COUNTY_CENTROID = "QUALITY_COUNTY_CENTROID";
-		public const string QUALITY_NAME_STATE_CENTROID = "QUALITY_STATE_CENTROID";
-		public const string QUALITY_NAME_COUNTRY_CENTROID = "QUALITY_COUNTRY_CENTROID";
-		public const string QUALITY_NAME_UNMATCHABLE = "QUALITY_UNMATCHABLE";
-		public const string QUALITY_NAME_UNKNOWN = "QUALITY_UNKNOWN";
+        public const string QUALITY_NAME_COUNTY_SUBDIVISION_CENTROID = "QUALITY_COUNTY_SUBDIVISION_CENTROID";
+        public const string QUALITY_NAME_COUNTY_CENTROID = "QUALITY_COUNTY_CENTROID";
+        public const string QUALITY_NAME_STATE_CENTROID = "QUALITY_STATE_CENTROID";
+        public const string QUALITY_NAME_COUNTRY_CENTROID = "QUALITY_COUNTRY_CENTROID";
+        public const string QUALITY_NAME_UNMATCHABLE = "QUALITY_UNMATCHABLE";
+        public const string QUALITY_NAME_UNKNOWN = "QUALITY_UNKNOWN";
 
         public const string QUALITY_SHORT_NAME_GPS = "gps";
         public const string QUALITY_SHORT_NAME_PRIMARY_STRUCTURE_ENTRANCE = "primary entrance";
@@ -117,20 +116,20 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
         public const string QUALITY_SHORT_NAME_UNMATCHABLE = "unmatchable";
         public const string QUALITY_SHORT_NAME_UNKNOWN = "unknown";
 
-		public const string QUALITY_DESCRIPTION_GPS = "GPS";
+        public const string QUALITY_DESCRIPTION_GPS = "GPS";
         public const string QUALITY_DESCRIPTION_PRIMARY_STRUCTURE_ENTRANCE = "Primary structure entrance";
         public const string QUALITY_DESCRIPTION_ROOFTOP = "Roof Top";
         public const string QUALITY_DESCRIPTION_DRIVEWAY_ENTRANCE = "Quality driveway entrance";
         public const string QUALITY_DESCRIPTION_ADDRESS_POINT = "Exact address point";
         public const string QUALITY_DESCRIPTION_EXACT_PARCEL_CENTROID = "Exact parcel centroid";
-		public const string QUALITY_DESCRIPTION_NEAREST_PARCEL_CENTROID = "Nearest parcel centroid";
-		public const string QUALITY_DESCRIPTION_ACTUAL_LOT_INTERPOLATION = "Actual lot linear interpolation";
-		public const string QUALITY_DESCRIPTION_UNIFORM_LOT_INTERPOLATION = "Uniform lot linear interpolation";
-		public const string QUALITY_DESCRIPTION_ADDRESS_RANGE_INTERPOLATION = "Addres range interpolation";
+        public const string QUALITY_DESCRIPTION_NEAREST_PARCEL_CENTROID = "Nearest parcel centroid";
+        public const string QUALITY_DESCRIPTION_ACTUAL_LOT_INTERPOLATION = "Actual lot linear interpolation";
+        public const string QUALITY_DESCRIPTION_UNIFORM_LOT_INTERPOLATION = "Uniform lot linear interpolation";
+        public const string QUALITY_DESCRIPTION_ADDRESS_RANGE_INTERPOLATION = "Addres range interpolation";
         public const string QUALITY_DESCRIPTION_BUILDING_CENTROID = "Building centroid";
         public const string QUALITY_DESCRIPTION_BUILDING_FRONT_DOOR = "Building front door";
-		public const string QUALITY_DESCRIPTION_STREET_INTERSECTION = "Street intersection";
-		public const string QUALITY_DESCRIPTION_STREET_CENTROID = "Street centroid";
+        public const string QUALITY_DESCRIPTION_STREET_INTERSECTION = "Street intersection";
+        public const string QUALITY_DESCRIPTION_STREET_CENTROID = "Street centroid";
         public const string QUALITY_DESCRIPTION_DYNAMIC_FEATURE_COMPOSITION_CENTROID = "Dynamic feature composition centroid";
 
         public const string QUALITY_DESCRIPTION_ZIP_CODE_TABULATION_AREA_PLUS_5_CENTROID = "ZCTA+5 centroid";
@@ -153,11 +152,11 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
         public const string QUALITY_DESCRIPTION_CITY_CENTROID = "City centroid";
         public const string QUALITY_DESCRIPTION_CONSOLIDATED_CITY_CENTROID = "Consolidated city centroid";
         public const string QUALITY_DESCRIPTION_COUNTY_SUBDIVISION_CENTROID = "County subdivision centroid";
-		public const string QUALITY_DESCRIPTION_COUNTY_CENTROID = "County centroid";
+        public const string QUALITY_DESCRIPTION_COUNTY_CENTROID = "County centroid";
         public const string QUALITY_DESCRIPTION_STATE_CENTROID = "State centroid";
-		public const string QUALITY_DESCRIPTION_COUNTRY_CENTROID = "Country centroid";
-		public const string QUALITY_DESCRIPTION_UNMATCHABLE = "Unmatchable";
-		public const string QUALITY_DESCRIPTION_UNKNOWN = "Unknown";
+        public const string QUALITY_DESCRIPTION_COUNTRY_CENTROID = "Country centroid";
+        public const string QUALITY_DESCRIPTION_UNMATCHABLE = "Unmatchable";
+        public const string QUALITY_DESCRIPTION_UNKNOWN = "Unknown";
 
         public static DataTable GetAllQualities()
         {
@@ -366,9 +365,9 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
             return ret;
         }
 
-		public QualityUtils()
-		{
-		}
+        public QualityUtils()
+        {
+        }
 
         public static GeocodeQualityType GetQualityTypeFromName(string quality)
         {
@@ -397,7 +396,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
             else if (String.Compare(quality, QUALITY_NAME_DRIVEWAY_ENTRANCE, true) == 0)
             {
                 ret = GeocodeQualityType.DrivewayEntrance;
-            }           
+            }
             else if (String.Compare(quality, QUALITY_NAME_ADDRESS_RANGE_INTERPOLATION, true) == 0)
             {
                 ret = GeocodeQualityType.AddressRangeInterpolation;
@@ -663,7 +662,7 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
                     ret = QUALITY_NAME_USPS_ZIP_CODE_PLUS_5_LINE_CENTROID;
                     break;
 
-                    
+
                 default:
                     throw new Exception("Unexpected geocodeQualityType: " + t);
             }
@@ -926,5 +925,5 @@ namespace USC.GISResearchLab.Geocoding.Core.Utils.Qualities
             }
             return ret;
         }
-	}
+    }
 }
